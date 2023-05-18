@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+}
+
+.container{
+    height: 100vw;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:100px auto 100px;
+    grid-template-areas:
+     "h"
+     "m" 
+     "f";
+}
+
+header{
+    grid-area: h;
+    background-color:#070E16;
+}
+
+main{
+    grid-area: m;
+    background-image: url(imagens/principal.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #969191;
+    
+   
+}
+
+.btn{
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    color: #969191;
+    width: 258px;
+    height: 61px;
+    text-align: center;
+     }
+    
+footer{
+    grid-area: f;
+    background-color:#070E16;
+}
