@@ -107,3 +107,7 @@ footer {
     background-color: black;
     grid-area: r;
 }
+
+.mensagem{
+    color:white;
+}

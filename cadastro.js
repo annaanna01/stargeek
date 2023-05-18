@@ -1,8 +1,8 @@
 const formulario = document.getElementById("formulario");
 const msg = document.querySelector(".mensagem")
-const nome = document.getElementById("nome:");
-const email = document.getElementById("email:");
-const senha = document.getElementById("senha:");
+const nome = document.getElementById("nome");
+const email = document.getElementById("email");
+const senha = document.getElementById("senha");
 
 
 function verificarEmail(email, evento){
