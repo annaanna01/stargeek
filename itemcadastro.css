@@ -51,6 +51,13 @@ main{
     align-items: center;
 }
 
+.card img{
+    width: 100px;
+}
+
+.info img{
+    width: 25px;
+}
 footer {
     grid-area: f;
     background-color: black;
