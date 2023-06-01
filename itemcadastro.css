@@ -49,6 +49,8 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    color: white;
 }
 
 .card img{

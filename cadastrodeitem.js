@@ -1,6 +1,10 @@
 const nome = document.getElementById("nome");
 const descricao = document.getElementById("descricao");
 const botao = document.getElementById("btn");
+const foto = document.getElementById("foto");
+
+var emaillogado;
+femailLogado();
 
 var url = new URL(window.location.href);
 var peditar = url.searchParams.get("peditar");
@@ -24,7 +28,8 @@ botao.onclick = (evento) => {
     {
         nome : nome.value,
         descricao : descricao.value,
-        foto : nomeArq
+        foto : nomeArq, 
+        email : emaillogado
     }
     )
     localStorage.setItem("catalogo", JSON.stringify(dados));
@@ -36,24 +41,22 @@ botao.onclick = (evento) => {
     });  
 
     }else{
-        editarenvio(envio);
-        window.location.assign("itemcadastro.html");
+        editarenvio(evento);
+        
     }
 
 }
-
+var fotoa;
 function editar(indice){
     nome.value = "";
     descricao.value = "";
-    foto.files[0] = null;
     let dados = JSON.parse(localStorage.getItem("catalogo"));
     nome.value = dados[indice].nome;
     descricao.value = dados[indice].descricao;
-    classificacao.value = dados[indice].classificacao;
-    fotoa.value = dados[indice].foto;
+    fotoa = dados[indice].foto;
 }
 
-var fotoa;
+
 function editarenvio(evento){
     evento.preventDefault();
     if((fotoa != foto.value)&&(foto.value != "")){
@@ -73,7 +76,10 @@ function salvaEdicao(pfoto){
     let dados = JSON.parse(localStorage.getItem("catalogo"));
     dados[pindice].nome = nome.value;
     dados[pindice].descricao = descricao.value;
-    dados[pindice].foto = foto.value;
+    dados[pindice].foto = pfoto;
+    dados [pindice].email = emaillogado;
+    localStorage.setItem("catalogo", JSON.stringify(dados));
+    window.location.assign("itemcadastro.html");
 }
 
 
@@ -105,4 +111,13 @@ async function fenvio() {
         return false;
     }
 
+}
+
+function femailLogado(){
+    let dados =sessionStorage.getItem("logado");
+    if (dados == null){ 
+    window.location.assign("login.html");
+} else { 
+    emaillogado = dados;
+}
 }
